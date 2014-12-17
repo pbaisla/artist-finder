@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  root 'artist_finder#index'
-  get 'artist_finder/index'
+  root 'application#index'
+  get 'artist_finder/search'
+  get 'artist_finder/info'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

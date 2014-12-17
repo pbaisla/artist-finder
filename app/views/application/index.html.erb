@@ -1,0 +1,6 @@
+<h1>ArtistFinder</h1>
+<%= form_tag({controller: "artist_finder", action: "search"}, method: "get") do %>
+  <%= label_tag(:artistsearch, "Search for:") %>
+  <%= text_field_tag(:artistsearch, nil, placeholder: "Search for any artist") %>
+  <%= submit_tag("Search") %>
+<% end %>
