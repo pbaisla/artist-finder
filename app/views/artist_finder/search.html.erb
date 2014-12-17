@@ -1,13 +1,20 @@
-<div class="panel-heading"><h1>Search</h1></div>
-	<div class="search">
+<div class="panel-heading">
+	<h1>Search</h1>
+</div>
+<div class="search">
+
 	<% if @artist["status"] == "ok" and @artist["results"]["totalResults"] != "0" %>
+
 		<% @artist["results"]["artistmatches"]["artist"].each do |artist| %>
 			<%= image_tag artist["image"].first["content"] %>
 			<%= link_to " " + artist["name"], controller: "artist_finder", action: "info", artist: artist["name"] %>
-			<br>
-			<br>
+			<br><br>
 		<% end %>
+
 	<% else %>
+
 		<p>Couldn't find anything. Try searching <%= link_to "again", root_path %></p>
+
 	<% end %>
+
 </div>

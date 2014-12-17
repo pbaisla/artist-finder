@@ -18,7 +18,7 @@ class ArtistFinderController < ApplicationController
   	begin
   		@artistinfo = @@lastfm.artist.get_info(artist: params['artist'])
   	rescue Exception => e
-  		render :text => e
+  		@artistinfo = {'status' => "notok"}
   	end
   end
 

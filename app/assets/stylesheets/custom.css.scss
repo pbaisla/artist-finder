@@ -104,7 +104,7 @@ body {
 }
 
 .panel {
-	background-color: rgba(1,1,1,0.4);
+	background-color: rgba(1,1,1,0.5);
 	position: relative;
 	top: 85px;
 	text-align: left;
@@ -113,6 +113,10 @@ body {
 .search {
 	padding-left: 25px;
 	padding-top: 25px;
+}
+
+.similar {
+	padding: 0px 5px;
 }
 
 @media (min-width: 768px) {

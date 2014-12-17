@@ -1,2 +1,27 @@
-<div class="panel-heading"><h1>Info</h1></div>
-<p><%= @artistinfo['name'] %></p>
+<% if @artistinfo["status"] != "notok" %>
+
+	<div class="panel-heading">
+		<h1><%= @artistinfo["name"] %></h1>
+	</div>
+	<div class="search">
+		<div class="text-center"><%= image_tag @artistinfo["image"].last["content"] %></div>
+		<br>
+		<p><%= sanitize(@artistinfo["bio"]["summary"]) %></p>
+		<h3>Similar artists</h3>
+		<% @artistinfo["similar"]["artist"].each do |artist| %>
+			<%= link_to (image_tag artist["image"].second["content"], "data-toggle" => "tooltip", 
+				"data-placement" => "top", title: artist["name"], class: "similar"), 
+				controller: "artist_finder", action: "info", artist: artist["name"] %>
+		<% end %>
+	</div>
+
+<% else %>
+
+	<div class="panel-heading">
+		<h1>Artist</h1>
+	</div>
+	<div class="search">
+		<p>Couldn't find anything. Try searching <%= link_to "again", root_path %></p>
+	</div>
+
+<% end %>
