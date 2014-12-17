@@ -4,7 +4,7 @@ class ArtistFinderController < ApplicationController
   
   def search
   	begin
-  		if user_signed_in?
+  		if user_signed_in? and not params['artistsearch'].blank?
   			@search = History.new({name: params['artistsearch'], user_id: current_user.id})
   			@search.save
   		end

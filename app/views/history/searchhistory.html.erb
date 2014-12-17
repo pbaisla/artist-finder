@@ -1,4 +1,14 @@
 <div class="panel-heading"><h1>Search History</h1></div>
-<% @history.each do |search| %>
-  <p><%= search['name'] %></p>
-<% end %>
+<div class="search">
+	<% @history.each do |search| %>
+		<%= link_to search["name"], controller: "artist_finder", action: "search", artistsearch: search["name"] %>
+		<br><br>
+	<% end %>
+
+	<% if @history.count == 0 %>
+
+		<p>You haven't searched for anything yet! Start <%= link_to "searching", root_path %></p>
+
+	<% end %>
+
+</div>
