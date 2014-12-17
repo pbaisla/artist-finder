@@ -7,13 +7,27 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
-<%= yield %>
-
-<%= render 'layouts/user_widget' %>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <div class="masthead clearfix">
+            <div class="inner">
+            	<h3 class="masthead-brand"><%= link_to "ArtistFinder", root_path %></h3>
+				<%= render 'layouts/user_widget' %>
+            </div>
+          </div>
+          <div class="inner cover">
+          	<div class="panel panel-default">
+				<div class="panel-body">
+					<%= yield %>
+				</div>
+			</div>
+			<p class="notice"><%= notice %></p>
+			<p class="alert"><%= alert %></p>
+	      </div>
+        </div>
+      </div>
+    </div>
 
 </body>
 </html>
