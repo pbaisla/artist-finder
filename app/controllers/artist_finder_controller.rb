@@ -4,6 +4,10 @@ class ArtistFinderController < ApplicationController
   
   def search
   	begin
+  		if user_signed_in?
+  			@search = History.new({name: params['artistsearch'], user_id: current_user.id})
+  			@search.save
+  		end
   		@artist = @@lastfm.artist.search(artist: params['artistsearch'])
   	rescue Exception => e
   		render :text => e

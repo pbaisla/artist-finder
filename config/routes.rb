@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+
   devise_for :users
   root 'application#index'
   get 'artist_finder/search'
   get 'artist_finder/info'
+  get 'history/searchhistory'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
