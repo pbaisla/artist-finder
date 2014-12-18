@@ -1,7 +1,21 @@
 <h2>Forgot your password?</h2>
 
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= devise_error_messages! %>
+<% if devise_error_messages!.empty? %>
+<% else %>
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <%= devise_error_messages! %>
+      <script type="text/javascript">
+      $(function() {
+        $('#myModal').modal('show');
+      });
+      </script>
+    </div>
+  </div>
+</div>
+<% end %>
 
   <div class="form-group">
   	<%= f.label :email %><br />

@@ -19,16 +19,32 @@
                 <%= link_to "ArtistFinder", root_path %>
               <% end %>
               </h3>
-				<%= render 'layouts/user_widget' %>
+		<%= render 'layouts/user_widget' %>
+            </div>
+          </div>
+          <div id="infoModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                <% unless alert.blank? %>
+                <p class="alert"><%= alert %></p>
+                <% end %>
+                <% unless notice.blank? %>
+                <p class="notice"><%= notice %></p>
+                <% end %>
+                <% unless notice.blank? and alert.blank? %> 
+                <script type="text/javascript">
+                $(function() {
+                  $('#infoModal').modal('show');
+                });
+                </script>
+                <% end %>
+              </div>
             </div>
           </div>
           <div class="inner cover">
           	<div class="panel panel-default">
 				<div class="panel-body">
 					<%= yield %>
-          <div class="panel-footer"><p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-      </div>
 				</div>
 			</div>
 			  </div>
