@@ -5,4 +5,8 @@ class HistoryController < ApplicationController
   def searchhistory
   	@history = History.where(user_id: current_user.id)
   end
+
+  def search
+  end
+
 end

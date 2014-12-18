@@ -1,16 +1,8 @@
-<h1>ArtistFinder</h1>
-<%= form_tag({controller: "artist_finder", action: "search"}, method: "get", id: "search") do %>
-<p>
-  <div class="input-group">
-	  <%= text_field_tag(:artistsearch, nil, placeholder: "Search for any artist", class: "form-control") %>
-	  <span class="glyphicon glyphicon-search input-group-addon" aria-hidden="true"></span>
-  </div>
-</p>
-<% end %>
-<script type="text/javascript">
-$(function() {
-	$(".glyphicon-search").click(function() {
-		$("#search").submit();
-	});
-});
-</script>
+<div class="jumbotron">
+	<div class="panel-heading"><h1>ArtistFinder</h1></div>
+	<br>
+	<p>Search for your favourite music artists and get recomendations for similar artists.</p>
+</div>
+	<p class="text-center">
+		<%= link_to "Start searching now", new_user_registration_path, class: "btn btn-primary btn-lg", role: "button" %>
+	</p>

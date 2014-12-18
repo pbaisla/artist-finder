@@ -110,6 +110,11 @@ body {
 	text-align: left;
 }
 
+.panel-footer, .jumbotron {
+  border: none;
+  background-color: rgba(1,1,1,0);
+}
+
 .search {
 	padding-left: 25px;
 	padding-top: 25px;

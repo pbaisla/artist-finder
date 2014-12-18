@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   root 'application#index'
+  get 'search' => 'history#search'
+  get 'about' => 'application#about'
   get 'artist_finder/search'
   get 'artist_finder/info'
   get 'history/searchhistory'

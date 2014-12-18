@@ -12,7 +12,13 @@
         <div class="cover-container">
           <div class="masthead clearfix">
             <div class="inner">
-            	<h3 class="masthead-brand"><%= link_to "ArtistFinder", root_path %></h3>
+            	<h3 class="masthead-brand">
+              <% if user_signed_in? %>
+                <%= link_to "ArtistFinder", search_path %>
+              <% else %>
+                <%= link_to "ArtistFinder", root_path %>
+              <% end %>
+              </h3>
 				<%= render 'layouts/user_widget' %>
             </div>
           </div>
@@ -20,11 +26,12 @@
           	<div class="panel panel-default">
 				<div class="panel-body">
 					<%= yield %>
+          <div class="panel-footer"><p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      </div>
 				</div>
 			</div>
-			<p class="notice"><%= notice %></p>
-			<p class="alert"><%= alert %></p>
-	      </div>
+			  </div>
         </div>
       </div>
     </div>
